@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StepsAnalysis</name>
+    </assembly>
+    <members>
+        <member name="T:StepsAnalysis.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:StepsAnalysis.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:StepsAnalysis.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:StepsAnalysis.Model.User">
+            <summary>
+            User, as well as information about the steps taken for each day.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.Model.User.Name">
+            <summary>
+            Get user name.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.Model.User.Surname">
+            <summary>
+            Get user surname.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.Model.User.StepsList">
+            <summary>
+            Get user steps list on the days.
+            </summary>
+        </member>
+        <member name="M:StepsAnalysis.Model.User.#ctor(System.String,System.String,System.Collections.Generic.List{StepsAnalysis.Model.Day})">
+            <summary>
+            
+            </summary>
+            <param name="name">User name</param>
+            <param name="surname">User surname.</param>
+            <param name="stepsList">User steps list on the days</param>
+        </member>
+        <member name="M:StepsAnalysis.Model.User.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name">User name</param>
+            <param name="surname">User surname.</param>
+        </member>
+        <member name="T:StepsAnalysis.Model.Day">
+            <summary>
+            User rank, status and steps by one day
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.Model.UserStepsListByDay.User">
+            <summary>
+            Get user.
+            </summary>
+        </member>
+        <member name="M:StepsAnalysis.Model.UserStepsListByDay.#ctor(StepsAnalysis.Model.User)">
+            <summary>
+            
+            </summary>
+            <param name="user">User.</param>
+        </member>
+        <member name="M:StepsAnalysis.Model.UserStepsListByDay.#ctor(StepsAnalysis.Model.User,System.Collections.Generic.List{StepsAnalysis.Model.Day})">
+            <summary>
+            
+            </summary>
+            <param name="user">User</param>
+            <param name="daysList">List steps, rank and user status by day</param>
+        </member>
+        <member name="M:StepsAnalysis.Model.UserStepsListByDay.Add(System.Int32,System.String,System.Int32)">
+            <summary>
+            Adds a day to the end of the list.
+            </summary>
+            <param name="rank">User rank on this day</param>
+            <param name="userStatus">User status on this day</param>
+            <param name="steps">User steps on this day</param>
+        </member>
+        <member name="M:StepsAnalysis.Model.UserStepsListByDay.GetAverageStepsNumber">
+            <summary>
+            Get average number of steps.
+            </summary>
+            <returns>Average number of steps in int</returns>
+        </member>
+        <member name="M:StepsAnalysis.Model.UserStepsListByDay.GetMinStepsNumber">
+            <summary>
+            Get minimal number of steps.
+            </summary>
+            <returns>Minimal number of steps</returns>
+        </member>
+        <member name="M:StepsAnalysis.Model.UserStepsListByDay.GetMaxStepsNumber">
+            <summary>
+            Get maximal number of steps.
+            </summary>
+            <returns>Maximal number of steps</returns>
+        </member>
+        <member name="M:StepsAnalysis.Model.JsonFileLoadUsers.Load(System.String)">
+            <summary>
+            Loads a users and steps data from a JSON file.
+            </summary>
+            <param name="fileName">Path and name json file</param>
+            <returns>Users list</returns>
+        </member>
+        <member name="M:StepsAnalysis.Model.JsonFileLoadUsers.Load(System.String[])">
+            <summary>
+            Loads a users and steps data from a JSON files.
+            </summary>
+            <param name="fileNames">Paths and names json files</param>
+            <returns>Users list</returns>
+        </member>
+        <member name="F:StepsAnalysis.ViewModel.ApplicationViewModel._openFileCommand">
+            Commands
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.ApplicationViewModel.Users">
+            <summary>
+            Get users list.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.ApplicationViewModel.SelectedUser">
+            <summary>
+            Get/Set selected user. Set user results in plotting.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.ApplicationViewModel.ExportFileCommand">
+            <summary>
+            Command for export selected user.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.ApplicationViewModel.ImportFileCommand">
+            <summary>
+            Command
+            </summary>
+        </member>
+        <member name="M:StepsAnalysis.ViewModel.ApplicationViewModel.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.Dialogs.JSONFilesOpenDialog.FilesFormat">
+            <summary>
+            Get format opens files. 
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.Dialogs.JSONFilesOpenDialog.FilesFormats">
+            <summary>
+            Get formats opens files. 
+            </summary>
+        </member>
+        <member name="M:StepsAnalysis.ViewModel.Dialogs.JSONFilesOpenDialog.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:StepsAnalysis.ViewModel.Dialogs.JSONFilesOpenDialog.Open">
+            <summary>
+            Get files nemes.
+            </summary>
+            <returns>Files nemes</returns>
+        </member>
+        <member name="T:StepsAnalysis.ViewModel.MainChart">
+            <summary>
+            Class for drow chart on LiveCharts.
+            </summary>
+        </member>
+        <member name="T:StepsAnalysis.ViewModel.MainChart.Point">
+            <summary>
+            Points type for main chart.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.MainChart.Instance">
+            <summary>
+            Get instance main char.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.MainChart.Series">
+            <summary>
+            Get series collection.
+            </summary>
+        </member>
+        <member name="M:StepsAnalysis.ViewModel.MainChart.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:StepsAnalysis.ViewModel.MainChart.AddLine">
+            <summary>
+            Adds an empty line on chart.
+            </summary>
+            <returns>New line index</returns>
+        </member>
+        <member name="M:StepsAnalysis.ViewModel.MainChart.AddLine(StepsAnalysis.ViewModel.MainChart.Point[])">
+            <summary>
+            Adds an line on chart.
+            </summary>
+            <param name="series">Array (int int)</param>
+        </member>
+        <member name="M:StepsAnalysis.ViewModel.MainChart.AddPoint(System.Int32,StepsAnalysis.ViewModel.MainChart.Point)">
+            <summary>
+            Add new point to a line o the index. The line must exist.
+            </summary>
+            <param name="lineIndex">The index of the line to which you want to add a point</param>
+            <param name="point">Point (int, int)</param>
+        </member>
+        <member name="M:StepsAnalysis.ViewModel.MainChart.AddPoint(StepsAnalysis.ViewModel.MainChart.Point)">
+            <summary>
+            Add new point to a last line.
+            </summary>
+        </member>
+        <member name="M:StepsAnalysis.ViewModel.MainChart.ClearLines">
+            <summary>
+            Clears all line on the chart.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.Views.UserView.User">
+            <summary>
+            Get user.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.Views.UserView.Name">
+            <summary>
+            Get user name.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.Views.UserView.Surname">
+            <summary>
+            Get user surname.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.Views.UserView.StepsList">
+            <summary>
+            Get user steps list on the days.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.Views.UserView.AverageSteps">
+            <summary>
+            Get average number of steps.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.Views.UserView.MaxSteps">
+            /// <summary>
+            Get maximal number of steps.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.Views.UserView.MinSteps">
+            <summary>
+            Get minimal number of steps.
+            </summary>
+        </member>
+        <member name="P:StepsAnalysis.ViewModel.Views.UserView.BackgroundColor">
+            <summary>
+            Get background color System.Windows.Media.SolidColorBrush.
+            </summary>
+        </member>
+        <member name="M:StepsAnalysis.ViewModel.Views.UserView.#ctor(StepsAnalysis.Model.User)">
+            <summary>
+            
+            </summary>
+            <param name="user">User</param>
+        </member>
+        <member name="M:StepsAnalysis.ViewModel.Views.UserView.op_Implicit(StepsAnalysis.Model.User)~StepsAnalysis.ViewModel.Views.UserView">
+            <summary>
+            Overloading UserView to User Conversion Operations.
+            </summary>
+            <param name="user">User</param>
+        </member>
+        <member name="M:StepsAnalysis.ViewModel.Views.UserView.op_Implicit(StepsAnalysis.ViewModel.Views.UserView)~StepsAnalysis.Model.User">
+            <summary>
+            Overloading User to UserView Conversion Operations.
+            </summary>
+            <param name="userView">User view</param>
+        </member>
+        <member name="T:StepsAnalysis.View.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:StepsAnalysis.View.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>
